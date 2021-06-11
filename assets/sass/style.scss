@@ -1,0 +1,131 @@
+$dark-cyan: hsl(185, 75%, 39%);
+$dark-blue: hsl(229, 23%, 23%);
+$grayish-blue: hsl(227, 10%, 46%); 
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: .3s all;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    background-image: url(../images/bg-pattern-bottom.svg), url(../images/bg-pattern-top.svg);
+    background-position: left 50vw top 50vh, right 50vw bottom 50vh;
+    background-repeat: no-repeat;
+    background-color: $dark-cyan;
+    
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+.profile__card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 6rem;
+
+    background-image: url(../images/bg-pattern-card.svg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 0 top 0;
+
+    border-radius: 1rem;
+}
+
+
+
+.profile__image {
+    margin-bottom: 1.5rem;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.profile__name {
+    margin-bottom: .5rem;
+    font-size: 18px;
+    color: $dark-blue;
+
+    mark {
+        margin-left: 2px;
+        color: $grayish-blue;
+        background-color: transparent;
+        font-weight: normal;
+
+    }
+}
+
+.profile__city {
+    margin-bottom: 1.5rem;
+    color: $grayish-blue;
+}
+
+.profile__stats {
+    width: 100%;
+    padding: 2rem 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .5rem;
+
+    border-top: 1px solid #ccc;
+}
+
+.profile__stats-wrapper {
+    text-align: center;
+
+    h3 {
+        margin-bottom: .5rem;
+        color: $dark-blue;
+    }
+
+    span {
+        font-size: 14px;
+        color: $grayish-blue;
+    }
+}
+
+
+
+.attribution { 
+    position: absolute;
+    bottom: 2rem;
+    font-size: 17px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background-color: hsl(228, 45%, 44%);
+        width: 100%;
+        bottom: -2px;
+        transform: scale(0);
+    }
+
+    &:hover::before {
+        transform: scale(1);
+    }
+}
